@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object id="courseController" scope="request" singleton="false" type="MvcApplication1.Controllers.CourseController, MvcApplication1">
+    <property name="CourseService" ref="courseService" />
+  </object>
+
+  <object id="courseService" type="MvcApplication1.Services.Impl.CourseService, MvcApplication1">
+    <property name="CourseDao" ref="courseDao" />
+  </object>
+
+  <object id="courseDao" type="MvcApplication1.Dao.Impl.CourseDao, MvcApplication1">
+    <property name="AdoTemplate" ref="adoTemplate" />
+  </object>
+
+</objects>
